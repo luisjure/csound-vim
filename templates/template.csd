@@ -1,10 +1,10 @@
 <CsoundSynthesizer>
-;<CsOptions>
-;</CsOptions>
+<CsOptions>
+</CsOptions>
 ; ==============================================
 <CsInstruments>
 
-sr	=	44100
+sr	=	48000
 ksmps	=	1
 ;nchnls	=	2
 0dbfs	=	1

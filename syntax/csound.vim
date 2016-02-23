@@ -1,11 +1,15 @@
 " Vim syntax file
 " Language:	csound	
 " Maintainer:	luis jure <lj@eumus.edu.uy>
-" Version:	3.1
-" Last change:	2010-06-09 00:55:30
+" Version:	3.2
+" Last change:	2016-02-23
 
 " clean syntax
-syntax clear
+if version < 600
+  syntax clear
+elseif exists("b:current_syntax")
+  finish
+endif
 
 " csound is case sensitive
 syntax case match

@@ -19,17 +19,6 @@ Defines a macro.
 
 Conditional reading of code.
 
-		#ifdef	 NAME
-	 ....
-		#else	
-	 ....
-		#end	
-
---------------------------------------------------------------------------
-*#end*
-
-Conditional reading of code.
-
 		#ifndef	 NAME
 	 ....
 		#else	
