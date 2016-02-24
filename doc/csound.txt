@@ -1904,7 +1904,7 @@ Applies an envelope consisting of 3 segments.
 --------------------------------------------------------------------------
 *envlpxr*
 
-The
+The envlpx opcode with a final release segment.
 
 	ares 	envlpxr	 xamp, irise, idec, ifn, iatss, iatdec [, ixmod] [,irind]
 	kres 	envlpxr	 kamp, irise, idec, ifn, iatss, iatdec [, ixmod] [,irind]
@@ -2110,7 +2110,7 @@ Function-table-based crossfading looper.
 --------------------------------------------------------------------------
 *floor*
 
-Returns the largest integer not greater than
+Returns the largest integer not greater than x.
 
 		floor	(x) (init-, control-, or audio-rate arg allowed)
 
@@ -2986,7 +2986,7 @@ Applies a straight line rise and decay pattern to an input amp signal.
 --------------------------------------------------------------------------
 *linenr*
 
-The
+The linen opcode extended with a final release segment.
 
 	ares 	linenr	 xamp, irise, idec, iatdec
 	kres 	linenr	 kamp, irise, idec, iatdec
@@ -3026,7 +3026,7 @@ Trace a series of line segments between specified points including a release seg
 --------------------------------------------------------------------------
 *locsend*
 
-Distributes the audio signals of a previous
+Distributes the audio signals of a previous locsig opcode.
 
 	a1, a2 	locsend	
 	a1, a2, a3, a4 	locsend	
@@ -3732,7 +3732,7 @@ Mutes/unmutes new instances of a given instrument.
 --------------------------------------------------------------------------
 *mxadsr*
 
-Calculates the classical ADSR envelope using the
+Calculates the classical ADSR envelope using the expsegr mechanism.
 
 	ares 	mxadsr	 iatt, idec, islev, irel [, idel] [, ireltim]
 	kres 	mxadsr	 iatt, idec, islev, irel [, idel] [, ireltim]
@@ -4266,7 +4266,7 @@ Granular synthesizer with "per grain" control over many of its parameters. Has a
 --------------------------------------------------------------------------
 *partikkelsync*
 
-Outputs
+Outputs partikkel's grain scheduler clock pulse and phase to synchronize several instances of the partikkel opcode to the same clock source.
 
 	async [,aphase] 	partikkelsync	 iopcode_id
 
@@ -5190,7 +5190,7 @@ Suspends a performance while a special initialization pass is executed.
 --------------------------------------------------------------------------
 *release*
 
-Indicates whether a note is in its
+Indicates whether a note is in its “release” stage.
 
 	kflag 	release	
 
@@ -5281,7 +5281,7 @@ Same as the nreverb opcode.
 --------------------------------------------------------------------------
 *reverb*
 
-Reverberates an input signal with a
+Reverberates an input signal with a “natural room” frequency response.
 
 	ares 	reverb	 asig, krvt [, iskip]
 
@@ -5346,7 +5346,7 @@ Returns a random number in a unipolar range at the rate given by the input argum
 --------------------------------------------------------------------------
 *round*
 
-Returns the integer value nearest to
+Returns the integer value nearest to x ; if the fractional part of x is exactly 0.5, the direction of rounding is undefined.
 
 		round	(x) (init-, control-, or audio-rate arg allowed)
 
