@@ -4675,7 +4675,7 @@ Converts a comma-separated text file to a .pvx file.
 --------------------------------------------------------------------------
 *pvadd*
 
-Reads from a
+Reads from a pvoc file and uses the data to perform additive synthesis. 
 
 	ares 	pvadd	 ktimpnt, kfmod, ifilcod, ifn, ibins [, ibinoffset] [, ibinincr] [, iextractmode] [, ifreqlim] [, igatefn]
 
