@@ -3,8 +3,8 @@
 " Language:	csound	
 " Maintainer:	luis jure <lj@eumus.edu.uy>
 " License:	MIT
-" Version:	2.1 
-" Last Change:	2016-02-25
+" Version:	2.2 
+" Last Change:	2016-07-15
 
 " Vim syntax file
 
@@ -29,38 +29,70 @@ set foldmethod=syntax
 runtime! syntax/csound_opcodes.vim
 
 " csound opcodes and operators
-
+syn match csOperator	"^"
+syn match csOperator	"<<"
+syn match csOperator	"<="
+syn match csOperator	"<"
+syn match csOperator	"=="
+syn match csOperator	"="
+syn match csOperator	">="
+syn match csOperator	">>"
+syn match csOperator	">"
 syn match csOperator	"||"
+syn match csOperator	"|"
+syn match csOperator	"-" 
+syn match csOperator	":" 
 syn match csOperator	"!="
+syn match csOperator	"?" 
 syn match csOperator	"/"
 syn match csOperator	"("
 syn match csOperator	")"
-syn match csOperator	"&&"
-syn match csOperator	"<"
-syn match csOperator	"<="
-syn match csOperator	"="
-syn match csOperator	"=="
-syn match csOperator	">"
-syn match csOperator	">="
-syn match csOperator	"+" 
 syn match csOperator	"*" 
-syn match csOperator	"-" 
+syn match csOperator	"&"
+syn match csOperator	"&&"
+syn match csOperator	"%" 
+syn match csOperator	"+" 
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" csound header
+" csd sections (with folding)
+syn match	csdTags		"^\s*</*CsoundSynthesizer>"
+syn region	csOptions	matchgroup=csdTags	start="<CsOptions>" end="</CsOptions>" fold transparent contains=CsComment
+syn region	csVersion	matchgroup=csdTags	start="<CsVersion>" end="</CsVersion>" fold transparent contains=CsComment
+syn region	csLicense	matchgroup=csdTags	start="<Cs\(Short\|\)License>" end="</Cs\(Short\|\)License>" fold transparent contains=CsComment
+syn region	csFile	matchgroup=csdTags	start="<Cs\(File\|FileB\|MidifileB\|SampleB\)>" end="</Cs\(File\|FileB\|MidifileB\|SampleB\)>" fold transparent contains=CsComment
+syn region	csInstruments	matchgroup=csdTags	start="<CsInstruments>" end="</CsInstruments>" fold transparent contains=ALLBUT,csScoStatement
+syn region	csScore		matchgroup=csdTags	start="<CsScore>" end="</CsScore>" fold transparent contains=CsScoStatement,CsComment,CsString
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" header
 syn keyword	csHeader	sr kr ar ksmps nchnls 0dbfs
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" csound local and global variables
-syn	match	csVariable	"\<[akipSfw].\{-}\>"
-syn	match	csVariable	"\<g[akiSfw].\{-}\>"
+" local and global variables
+syn	match	csVariable	"\<[akipSfw]\w\+\>"
+syn	match	csVariable	"\<g[akipSfw]\w\+\>"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" csound strings
-syn match	csString        +".\{-}"+
+" instruments and user-defined opcodes (with folding)
+syn region	csInstrRegion	matchgroup=csInstrument	start="^\s*instr\>" end="^\s*endin\>" fold transparent
+syn match	csInstrName	"\(^\s*instr\s\+\)\@<=\(\w\+,*\s*\)\+"
+
+syn region	csOpcodeRegion	matchgroup=csInstrument	start="^\s*opcode\>" end="^\s*endop\>" fold transparent
+syn match	csOpcodeName	"\(^\s*opcode\s\+\)\@<=\(\S\+\),"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" csound defines
+" program flow control
+syn keyword	CsConditional	cggoto cigoto ckgoto cngoto else elseif endif goto if igoto kgoto then tigoto timout
+syn keyword	CsLoop	loop_ge loop_gt loop_le loop_lt until while do od
+" label
+syn match	csLabel	"^\s*\<\S\{-}:"
+syn match	csLabel "\(\<\(goto\|igoto\|kgoto\|tigoto\|reinit\)\s\+\)\@<=\(\w\+\)"
+syn match	csLabel	"\(\<\(cggoto\|cigoto\|ckgoto\|cngoto\)\s\+.\{-},\s*\)\@<=\(\w\+\)"
+syn match	csLabel	"\(\<timout\s\+.\{-},\s*.\{-},\s*\)\@<=\(\w\+\)"
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" defines
 syn match	csMacro		+^\s*#\s*\<include\>\s\+.\{-}".\{-}"+
 " define
 syn region	csDefine	matchgroup=csMacro start="\(^\s*#\s*define\s\+\w\{-}\s\+\)\@<=#" end="#" fold transparent
@@ -70,38 +102,21 @@ syn match	csMacroName	"$\w\{-}\.\{,1}\s"
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" csd sections (with folding)
-syn region	csOptions	matchgroup=csdTags	start="<CsOptions>" end="</CsOptions>" fold transparent
-syn region	csInstruments	matchgroup=csdTags	start="<CsInstruments>" end="</CsInstruments>" fold transparent contains=ALLBUT,csScoStatements
-syn region	csScore		matchgroup=csdTags	start="<CsScore>" end="</CsScore>" fold transparent contains=ALLBUT,csVariable,csOpcode
-syn match	csdTags		"^\s*</*CsoundSynthesizer>"
-
+" strings
+syn match	csString        +".\{-}"+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" csound instruments and user-defined opcodes (with folding)
-syn region	csInstrRegion	matchgroup=csInstrument	start="^\s*instr\>" end="^\s*endin\>" fold transparent
-syn match	csInstrName	"\(^\s*instr\s\+\)\@<=\(\w\+,*\s*\)\+"
-
-syn region	csOpcodeRegion	matchgroup=csInstrument	start="^\s*opcode\>" end="^\s*endop\>" fold transparent
-syn match	csOpcodeName	"\(^\s*opcode\s\+\)\@<=\(\S\+\),"
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" csound label	
-syn match	csLabel	"^\s*\<\S\{-}:"	
-
-" score statements
-syn match	csF	"^\s*f\s*\d\+"
-syn match	csI	"^\s*i\s*\d\+"
-syn match	csI	+\(^\s*i\s*\)\@<="+
-syn match	csScoStatements	"^\s*[abemnrstvx]" contained
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" csound comments
+" comments
 syn match	csComment	";.*$"
 syn region	csComment	matchgroup=csComment	start="/\*" end="\*/" fold
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" score statements
+syn match	csScoStatement	"^\s*f\s*\d\+"	" function tables
+syn match	csScoStatement	"^\s*i\s*\d\+"	" numbered instrument
+syn match	csScoStatement	+^\s*i\s*"[_a-zA-Z]\w*"+	" named instrument
+syn match	csScoStatement	"^\s*[abemnrstvx]" " score events
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " COLOR DEFINITIONS
@@ -118,15 +133,13 @@ hi link	csVariable  	String
 hi link	csdSection  	Label
 hi link	csdTags  	Define
 hi link	csComment	Comment
+hi link csConditional	Conditional
+hi link csLoop	Repeat
 hi link	csMacro 	Define
 hi link	csMacroName	Label
-" hi link	PreProc 	Define
 hi link	csLabel 	Define
 hi link	csString	String
-
-hi link	csF	  	String
-hi link	csI	  	String
-hi link	csScoStatements  	String
+hi link	csScoStatement  	Label
 
 " to change the appearance you can either:
 " 1. link to some other default methods (i. e. Constant, Identifier, etc.) 
