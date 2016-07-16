@@ -22,7 +22,7 @@ After installation, run in Vim `:helptags` on the directory with the documentati
 
 ### Features
 ##### syntax highlighting
-Highlighting of all (or most) Csound syntactic elements. List of `opcodes` updated to Csound 6.06.
+Highlighting of all (or most) Csound syntactic elements. List of `opcodes` updated to Csound 6.07.
 
 ##### folding
 The [folding] (http://vimdoc.sourceforge.net/htmldoc/usr_28.html) function in Vim is used to fold orchestra and score sections, instruments and user defined opcodes, multiline comments, etc.
@@ -33,14 +33,14 @@ Some function keys are mapped to macros to save the `.csd` file, compile it and 
 
 - `F8 ` - write current .csd to disk, compile it without extra command line flags
 - `F9 ` - write current .csd to disk, compile it and send to audio card in realtime (`-o dac`)
-- `F10` - write current .csd to disk, compile it and write it to file $SFDIR/test.wav, return to Vim
-- `F11` - write current .csd to disk, compile it and write it to file $SFDIR/test.wav, stay in console (for debugging)
+- `F10` - write current .csd to disk, compile it and write it to file ./test.wav, return to Vim
+- `F11` - write current .csd to disk, compile it and write it to file ./test.wav, stay in console (for debugging)
 - `F12` - play (with the command `aplay`) last compiled file, return to Vim 
 
 These macros were designed for GNU/Linux, they might need adjustments for other environments.
 
 ##### online help
-Online documentation for all (or most) Csound elements is available through the `:he[lp]` command, or typing `K` when the cursor is on the element in normal mode.
+Online documentation for most Csound elements is available through the `:he[lp]` command, or typing `K` when the cursor is on the element in normal mode.
 
 ##### template
 When creating a new file with the `.csd` extension, the `templates/template.csd` file will be used as a template.
