@@ -63,3 +63,5 @@ For ideas, suggestions, patches, or simply encouragement: Nicola Bernardini, Bre
 
 ### License
 Copyright (c) 2001-2016 Luis Jure, The MIT License.
+
+See the [`LICENSE`] (./LICENSE) file for more details.
