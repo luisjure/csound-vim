@@ -52,14 +52,14 @@ In insert or replace mode, type a few letters and then press `Ctrl-n` or `Ctrl-p
 See [`:he ins-completion`] (http://vimdoc.sourceforge.net/htmldoc/insert.html#ins-completion) for more details.
 
 ##### online help
-Online documentation for most Csound elements is available through the `:he[lp]` command, or typing `K` when the cursor is on the element in normal mode. (The list of elements included in the help system has not been updated in a while.)
+Online documentation for most Csound elements is available through the `:he[lp]` command, or typing `K` when the cursor is on the element in normal mode. Updated to html manual for 6.07.
 
 ### Contributing
 You can contribute to the development of this plugin by reporting bugs or missing elements, and by suggesting improvements and new functionalities. 
 Patches or at least ideas of how to implement the changes are most welcome.
 
 #### Acknowledgements
-For ideas, suggestions, patches, or simply encouragement: Nicola Bernardini, Brett Cornwall, Jay Chernik, Dave Phillips, Steven Yi.
+People who contributed with ideas, suggestions, patches, or simply encouragement include: Nicola Bernardini, Brett Cornwall, Jay Chernik, Dave Phillips, and Steven Yi.
 
 ### License
 Copyright (c) 2001-2016 Luis Jure, The MIT License.
