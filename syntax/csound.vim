@@ -3,8 +3,7 @@
 " Language:	csound	
 " Maintainer:	luis jure <lj@eumus.edu.uy>
 " License:	MIT
-" Version:	2.2 
-" Last Change:	2016-07-15
+" Last Change:	2016-07-31
 
 " Vim syntax file
 
