@@ -43,7 +43,7 @@ function! OpenManual()
   else
     echo "sorry, cannot detect your OS"
     echo "try setting the variable g:os in your .vimrc"
-    echo 'valid strings are "Linux" "OSX" and "Windows"'
+    echo 'valid strings are "Linux" "OSX" "Windows" and "Mingw"'
   endif
 endfunction
 
