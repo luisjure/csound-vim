@@ -35,7 +35,7 @@ function! OpenManual()
   elseif g:os == "OSX"
     execute "!open" manual_page
   elseif g:os == "Windows"
-    execute "!start" manual_page
+    execute "!start cmd /c start" manual_page
   else
     echo "sorry, cannot detect your OS"
     echo "try setting the variable g:os in your .vimrc"
