@@ -3,7 +3,7 @@
 " Language:	csound	
 " Maintainer:	luis jure <lj@eumus.edu.uy>
 " License:	MIT
-" Last Change:	2016-08-02
+" Last Change:	2016-08-03
 
 " configure dictionary for autocompletion
 au FileType csound execute 'setlocal dict=<sfile>:p:h:h/words/csound.txt'
@@ -28,10 +28,12 @@ endif
 " open the manual page for the opcode under the cursor
 function! OpenManual()
   if !exists ("g:csound_manual")
-    let g:csound_manual = "http://csound.github.io/docs/manual/"
+    let manual_dir = "http://csound.github.io/docs/manual/"
+  else
+    let manual_dir = g:csound_manual
   endif
   let opcode = expand("<cword>")
-  let manual_page = g:csound_manual . opcode . ".html"
+  let manual_page = manual_dir . opcode . ".html"
   if g:os == "Linux"
     execute "!xdg-open" manual_page "&"
   elseif g:os == "OSX"
