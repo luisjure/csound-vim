@@ -30,10 +30,10 @@ function! OpenManual()
   if !exists ("g:csound_manual")
     let manual_dir = "http://csound.github.io/docs/manual/"
   else
-    let manual_dir = g:csound_manual
+    let manual_dir = resolve(expand(g:csound_manual)) 
   endif
   let opcode = expand("<cword>")
-  let manual_page = manual_dir . opcode . ".html"
+  let manual_page = manual_dir . "/" . opcode . ".html"
   if g:os == "Linux"
     execute "!xdg-open" manual_page "&"
   elseif g:os == "OSX"
