@@ -3,7 +3,7 @@
 " Language:	csound	
 " Maintainer:	luis jure <lj@eumus.edu.uy>
 " License:	MIT
-" Last Change:	2016-08-03
+" Last Change:	2016-08-04
 
 " configure dictionary for autocompletion
 au FileType csound execute 'setlocal dict=<sfile>:p:h:h/words/csound.txt'
@@ -53,7 +53,7 @@ endfunction
 function! OpenExample()
   if exists ("g:csound_manual")
     let opcode = expand("<cword>")
-    let examplecsd = g:csound_manual . "examples/" . opcode . ".csd"
+    let examplecsd = resolve(expand(g:csound_manual)) . "/examples/" . opcode . ".csd"
     if filereadable(examplecsd)
   	  execute "tabnew | silent view" examplecsd
     else
@@ -65,5 +65,5 @@ function! OpenExample()
   endif
 endfunction
 
-map <F1> :call OpenManual()<CR><CR>
-map <F2> :call OpenExample()<CR>
+noremap <F1> :call OpenManual()<CR><CR>
+noremap <F2> :call OpenExample()<CR>
