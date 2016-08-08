@@ -1,7 +1,7 @@
 # csound-vim
 ### Csound tools for Vim
 
-Set of tools for editing Csound files (`.orc`, `.sco`, `.csd`, `.udo`) with Vim: syntax recognition and highlighting, folding, macros, auto completion, on-line reference, and templates.
+Set of tools for editing Csound files (`.orc`, `.sco`, `.csd`, `.udo`) with Vim: syntax recognition and highlighting, folding, macros, autocompletion, on-line reference, and templates.
 
 
 ### Installation
@@ -35,8 +35,8 @@ The [folding] (http://vimdoc.sourceforge.net/htmldoc/usr_28.html) function in Vi
 ##### macros
 Some function keys are mapped to macros to save the `.csd` file, compile it and listen to the results, without leaving the editor.
 
-- `F8 ` - write current `.csd` to disk, compile it without extra command line flags
-- `F9 ` - write current `.csd` to disk, compile it and send to audio card in realtime (`-o dac`)
+- ` F8` - write current `.csd` to disk, compile it without extra command line flags
+- ` F9` - write current `.csd` to disk, compile it and send to audio card in realtime (`-o dac`)
 - `F10` - write current `.csd` to disk, compile it and write it to file `./test.wav`, return to Vim
 - `F11` - write current `.csd` to disk, compile it and write it to file `./test.wav`, stay in console (for debugging)
 - `F12` - play (with the command `aplay`) last compiled file, return to Vim 
@@ -46,13 +46,25 @@ These macros were designed for GNU/Linux, they might need adjustments for other 
 ##### template
 When creating a new file with the `.csd` extension, the `templates/template.csd` file will be used as a template.
 
-##### auto completion
-A dictionary is included with all the valid `opcode` names in the language, to be used with the built-in auto completion function in Vim.
+##### autocompletion
+A dictionary is included with all the valid `opcode` names in the language, to be used with the built-in autocompletion function in Vim.
 In insert or replace mode, type a few letters and then press `Ctrl-n` or `Ctrl-p`; a menu will appear with all the possible completions.
 See [`:he ins-completion`] (http://vimdoc.sourceforge.net/htmldoc/insert.html#ins-completion) for more details.
 
 ##### online help
 Online documentation for most Csound elements is available through the `:he[lp]` command, or typing `K` when the cursor is on the element in normal mode. Updated to html manual for 6.07.
+
+##### html manual
+In normal mode, the `F1` key opens in the default web browser the manual page for the opcode under the cursor.
+
+The global variable `g:csound_manual` can be defined in `.vimrc`, pointing to a local directory with the html manual.
+
+If this variable is not defined, the web version at `csound.github.io` will be opened.
+
+##### example `csd`
+In normal mode, the `F2` key opens in a new tab the example `csd` for the opcode under the cursor, if it exists and its name is of the form `opcode.csd`.
+
+This only works if the global variable `g:csound_manual` is defined and points to a local copy of the html manual.
 
 ### Contributing
 You can contribute to the development of this plugin by reporting bugs or missing elements, and by suggesting improvements and new functionalities. 
