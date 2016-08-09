@@ -52,7 +52,9 @@ In insert or replace mode, type a few letters and then press `Ctrl-n` or `Ctrl-p
 See [`:he ins-completion`] (http://vimdoc.sourceforge.net/htmldoc/insert.html#ins-completion) for more details.
 
 ##### online help
-Online documentation for most Csound elements is available through the `:he[lp]` command, or typing `K` when the cursor is on the element in normal mode. Updated to html manual for 6.07.
+Online documentation for most Csound elements is available through the `:he[lp]` command, or typing `K` when the cursor is on the element in normal mode. See [`:he help`] (http://vimdoc.sourceforge.net/htmldoc/helphelp.html) and [`:he K`] (http://vimdoc.sourceforge.net/htmldoc/various.html#K) for more details. 
+
+The help file is based on an abridged version of the Csound html manual, updated to version 6.07.
 
 ##### html manual
 In normal mode, the `F1` key opens in the default web browser the manual page for the opcode under the cursor.
