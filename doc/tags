@@ -22,6 +22,7 @@ $NAME	csound.txt	/*$NAME*
 >	csound.txt	/*>*
 >=	csound.txt	/*>=*
 >>	csound.txt	/*>>*
+A4	csound.txt	/*A4*
 ATSadd	csound.txt	/*ATSadd*
 ATSaddnz	csound.txt	/*ATSaddnz*
 ATSbufread	csound.txt	/*ATSbufread*
@@ -32,6 +33,7 @@ ATSpartialtap	csound.txt	/*ATSpartialtap*
 ATSread	csound.txt	/*ATSread*
 ATSreadnz	csound.txt	/*ATSreadnz*
 ATSsinnoi	csound.txt	/*ATSsinnoi*
+C	csound.txt	/*C*
 FLbox	csound.txt	/*FLbox*
 FLbutBank	csound.txt	/*FLbutBank*
 FLbutton	csound.txt	/*FLbutton*
@@ -142,6 +144,7 @@ GEN52	csound.txt	/*GEN52*
 GENexp	csound.txt	/*GENexp*
 GENfarey	csound.txt	/*GENfarey*
 GENpadsynth	csound.txt	/*GENpadsynth*
+GENquadbezier	csound.txt	/*GENquadbezier*
 GENsone	csound.txt	/*GENsone*
 GENtanh	csound.txt	/*GENtanh*
 GENwave	csound.txt	/*GENwave*
@@ -161,6 +164,8 @@ JackoMidiOutConnect	csound.txt	/*JackoMidiOutConnect*
 JackoNoteOut	csound.txt	/*JackoNoteOut*
 JackoOn	csound.txt	/*JackoOn*
 JackoTransport	csound.txt	/*JackoTransport*
+K35_hpf	csound.txt	/*K35_hpf*
+K35_lpf	csound.txt	/*K35_lpf*
 Matrix	csound.txt	/*Matrix*
 Matrix	csound.txt	/*Matrix*
 MixerClear	csound.txt	/*MixerClear*
@@ -173,6 +178,7 @@ Notes	csound.txt	/*Notes*
 Notes	csound.txt	/*Notes*
 OSCinit	csound.txt	/*OSCinit*
 OSClisten	csound.txt	/*OSClisten*
+OSCraw	csound.txt	/*OSCraw*
 OSCsend	csound.txt	/*OSCsend*
 Print	csound.txt	/*Print*
 Print	csound.txt	/*Print*
@@ -276,6 +282,7 @@ binit	csound.txt	/*binit*
 biquad	csound.txt	/*biquad*
 biquada	csound.txt	/*biquada*
 birnd	csound.txt	/*birnd*
+bpf	csound.txt	/*bpf*
 bqrez	csound.txt	/*bqrez*
 butbp	csound.txt	/*butbp*
 butbr	csound.txt	/*butbr*
@@ -291,6 +298,7 @@ c2r	csound.txt	/*c2r*
 cabasa	csound.txt	/*cabasa*
 cauchy	csound.txt	/*cauchy*
 cauchyi	csound.txt	/*cauchyi*
+cbrt	csound.txt	/*cbrt*
 ceil	csound.txt	/*ceil*
 cell	csound.txt	/*cell*
 cent	csound.txt	/*cent*
@@ -320,6 +328,7 @@ clfilt	csound.txt	/*clfilt*
 clip	csound.txt	/*clip*
 clockoff	csound.txt	/*clockoff*
 clockon	csound.txt	/*clockon*
+cmp	csound.txt	/*cmp*
 cmplxprod	csound.txt	/*cmplxprod*
 cngoto	csound.txt	/*cngoto*
 comb	csound.txt	/*comb*
@@ -361,6 +370,7 @@ ctrl21	csound.txt	/*ctrl21*
 ctrl7	csound.txt	/*ctrl7*
 ctrlinit	csound.txt	/*ctrlinit*
 cuserrnd	csound.txt	/*cuserrnd*
+d	csound.txt	/*d*
 dam	csound.txt	/*dam*
 date	csound.txt	/*date*
 dates	csound.txt	/*dates*
@@ -370,6 +380,8 @@ dbfsamp	csound.txt	/*dbfsamp*
 dcblock	csound.txt	/*dcblock*
 dcblock2	csound.txt	/*dcblock2*
 dconv	csound.txt	/*dconv*
+dct	csound.txt	/*dct*
+dctinv	csound.txt	/*dctinv*
 delay	csound.txt	/*delay*
 delay1	csound.txt	/*delay1*
 delayk	csound.txt	/*delayk*
@@ -383,6 +395,7 @@ deltapx	csound.txt	/*deltapx*
 deltapxw	csound.txt	/*deltapxw*
 denorm	csound.txt	/*denorm*
 diff	csound.txt	/*diff*
+diode_ladder	csound.txt	/*diode_ladder*
 directory	csound.txt	/*directory*
 diskgrain	csound.txt	/*diskgrain*
 diskin	csound.txt	/*diskin*
@@ -393,6 +406,7 @@ distort	csound.txt	/*distort*
 distort1	csound.txt	/*distort1*
 divz	csound.txt	/*divz*
 doppler	csound.txt	/*doppler*
+dot	csound.txt	/*dot*
 downsamp	csound.txt	/*downsamp*
 dripwater	csound.txt	/*dripwater*
 dssiactivate	csound.txt	/*dssiactivate*
@@ -470,9 +484,13 @@ fluidNote	csound.txt	/*fluidNote*
 fluidOut	csound.txt	/*fluidOut*
 fluidProgramSelect	csound.txt	/*fluidProgramSelect*
 fluidSetInterpMethod	csound.txt	/*fluidSetInterpMethod*
+fmanal	csound.txt	/*fmanal*
+fmax	csound.txt	/*fmax*
 fmb3	csound.txt	/*fmb3*
 fmbell	csound.txt	/*fmbell*
+fmin	csound.txt	/*fmin*
 fmmetal	csound.txt	/*fmmetal*
+fmod	csound.txt	/*fmod*
 fmpercfl	csound.txt	/*fmpercfl*
 fmrhode	csound.txt	/*fmrhode*
 fmvoice	csound.txt	/*fmvoice*
@@ -508,6 +526,7 @@ ftload	csound.txt	/*ftload*
 ftloadk	csound.txt	/*ftloadk*
 ftlptim	csound.txt	/*ftlptim*
 ftmorf	csound.txt	/*ftmorf*
+ftom	csound.txt	/*ftom*
 ftsamplebank	csound.txt	/*ftsamplebank*
 ftsave	csound.txt	/*ftsave*
 ftsavek	csound.txt	/*ftsavek*
@@ -524,6 +543,8 @@ gendy	csound.txt	/*gendy*
 gendyc	csound.txt	/*gendyc*
 gendyx	csound.txt	/*gendyx*
 getcfg	csound.txt	/*getcfg*
+getcol	csound.txt	/*getcol*
+getftargs	csound.txt	/*getftargs*
 getrow	csound.txt	/*getrow*
 getseed	csound.txt	/*getseed*
 gogobel	csound.txt	/*gogobel*
@@ -538,6 +559,7 @@ harmon2	csound.txt	/*harmon2*
 hdf5read	csound.txt	/*hdf5read*
 hdf5write	csound.txt	/*hdf5write*
 hilbert	csound.txt	/*hilbert*
+hilbert2	csound.txt	/*hilbert2*
 hrtfearly	csound.txt	/*hrtfearly*
 hrtfmove	csound.txt	/*hrtfmove*
 hrtfmove2	csound.txt	/*hrtfmove2*
@@ -547,6 +569,7 @@ hsboscil	csound.txt	/*hsboscil*
 hvs1	csound.txt	/*hvs1*
 hvs2	csound.txt	/*hvs2*
 hvs3	csound.txt	/*hvs3*
+hypot	csound.txt	/*hypot*
 i	csound.txt	/*i*
 i	csound.txt	/*i*
 ia	csound.txt	/*ia*
@@ -617,14 +640,27 @@ ksmps	csound.txt	/*ksmps*
 lenarray	csound.txt	/*lenarray*
 lfo	csound.txt	/*lfo*
 limit	csound.txt	/*limit*
+limit1	csound.txt	/*limit1*
 line	csound.txt	/*line*
 linen	csound.txt	/*linen*
 linenr	csound.txt	/*linenr*
 lineto	csound.txt	/*lineto*
+link_beat_force	csound.txt	/*link_beat_force*
+link_beat_get	csound.txt	/*link_beat_get*
+link_beat_request	csound.txt	/*link_beat_request*
+link_create	csound.txt	/*link_create*
+link_enable	csound.txt	/*link_enable*
+link_is_enabled	csound.txt	/*link_is_enabled*
+link_metro	csound.txt	/*link_metro*
+link_peers	csound.txt	/*link_peers*
+link_tempo_get	csound.txt	/*link_tempo_get*
+link_tempo_set	csound.txt	/*link_tempo_set*
+linlin	csound.txt	/*linlin*
 linrand	csound.txt	/*linrand*
 linseg	csound.txt	/*linseg*
 linsegb	csound.txt	/*linsegb*
 linsegr	csound.txt	/*linsegr*
+liveconv	csound.txt	/*liveconv*
 locsend	csound.txt	/*locsend*
 locsig	csound.txt	/*locsig*
 log	csound.txt	/*log*
@@ -689,7 +725,9 @@ mdelay	csound.txt	/*mdelay*
 median	csound.txt	/*median*
 mediank	csound.txt	/*mediank*
 metro	csound.txt	/*metro*
+mfb	csound.txt	/*mfb*
 midglobal	csound.txt	/*midglobal*
+midiarp	csound.txt	/*midiarp*
 midic14	csound.txt	/*midic14*
 midic21	csound.txt	/*midic21*
 midic7	csound.txt	/*midic7*
@@ -734,6 +772,8 @@ mp3len	csound.txt	/*mp3len*
 mp3scal	csound.txt	/*mp3scal*
 mpulse	csound.txt	/*mpulse*
 mrtmsg	csound.txt	/*mrtmsg*
+mtof	csound.txt	/*mtof*
+mton	csound.txt	/*mton*
 multitap	csound.txt	/*multitap*
 must	csound.txt	/*must*
 mute	csound.txt	/*mute*
@@ -761,6 +801,7 @@ nrpn	csound.txt	/*nrpn*
 nsamp	csound.txt	/*nsamp*
 nstance	csound.txt	/*nstance*
 nstrnum	csound.txt	/*nstrnum*
+ntom	csound.txt	/*ntom*
 ntrpol	csound.txt	/*ntrpol*
 octave	csound.txt	/*octave*
 octcps	csound.txt	/*octcps*
@@ -827,6 +868,8 @@ pan2	csound.txt	/*pan2*
 pareq	csound.txt	/*pareq*
 partials	csound.txt	/*partials*
 partikkel	csound.txt	/*partikkel*
+partikkelget	csound.txt	/*partikkelget*
+partikkelset	csound.txt	/*partikkelset*
 partikkelsync	csound.txt	/*partikkelsync*
 passign	csound.txt	/*passign*
 paulstretch	csound.txt	/*paulstretch*
@@ -836,6 +879,7 @@ pchmidi	csound.txt	/*pchmidi*
 pchmidib	csound.txt	/*pchmidib*
 pchmidinn	csound.txt	/*pchmidinn*
 pchoct	csound.txt	/*pchoct*
+pchtom	csound.txt	/*pchtom*
 pconvolve	csound.txt	/*pconvolve*
 pcount	csound.txt	/*pcount*
 pdclip	csound.txt	/*pdclip*
@@ -877,6 +921,7 @@ printk2	csound.txt	/*printk2*
 printks	csound.txt	/*printks*
 printks2	csound.txt	/*printks2*
 prints	csound.txt	/*prints*
+product	csound.txt	/*product*
 product	csound.txt	/*product*
 pset	csound.txt	/*pset*
 ptable	csound.txt	/*ptable*
@@ -931,6 +976,7 @@ pvsout	csound.txt	/*pvsout*
 pvspitch	csound.txt	/*pvspitch*
 pvstanal	csound.txt	/*pvstanal*
 pvstencil	csound.txt	/*pvstencil*
+pvstrace	csound.txt	/*pvstrace*
 pvsvoc	csound.txt	/*pvsvoc*
 pvswarp	csound.txt	/*pvswarp*
 pvsynth	csound.txt	/*pvsynth*
@@ -997,6 +1043,10 @@ s16b14	csound.txt	/*s16b14*
 s32b14	csound.txt	/*s32b14*
 samphold	csound.txt	/*samphold*
 sandpaper	csound.txt	/*sandpaper*
+sc_lag	csound.txt	/*sc_lag*
+sc_lagud	csound.txt	/*sc_lagud*
+sc_phasor	csound.txt	/*sc_phasor*
+sc_trig	csound.txt	/*sc_trig*
 scale	csound.txt	/*scale*
 scalearray	csound.txt	/*scalearray*
 scanhammer	csound.txt	/*scanhammer*
@@ -1011,6 +1061,7 @@ scoreline	csound.txt	/*scoreline*
 scoreline_i	csound.txt	/*scoreline_i*
 seed	csound.txt	/*seed*
 sekere	csound.txt	/*sekere*
+select	csound.txt	/*select*
 semitone	csound.txt	/*semitone*
 sense	csound.txt	/*sense*
 sensekey	csound.txt	/*sensekey*
@@ -1073,6 +1124,8 @@ sndwarp	csound.txt	/*sndwarp*
 sndwarpst	csound.txt	/*sndwarpst*
 sockrecv	csound.txt	/*sockrecv*
 socksend	csound.txt	/*socksend*
+sorta	csound.txt	/*sorta*
+sortd	csound.txt	/*sortd*
 soundin	csound.txt	/*soundin*
 space	csound.txt	/*space*
 spat3d	csound.txt	/*spat3d*
@@ -1209,6 +1262,7 @@ trsplit	csound.txt	/*trsplit*
 turnoff	csound.txt	/*turnoff*
 turnoff2	csound.txt	/*turnoff2*
 turnon	csound.txt	/*turnon*
+tvconv	csound.txt	/*tvconv*
 unirand	csound.txt	/*unirand*
 until	csound.txt	/*until*
 unwrap	csound.txt	/*unwrap*
@@ -1350,6 +1404,7 @@ xscansmap	csound.txt	/*xscansmap*
 xscanu	csound.txt	/*xscanu*
 xtratim	csound.txt	/*xtratim*
 xyin	csound.txt	/*xyin*
+xyscale	csound.txt	/*xyscale*
 y	csound.txt	/*y*
 zacl	csound.txt	/*zacl*
 zakinit	csound.txt	/*zakinit*
@@ -1358,6 +1413,11 @@ zar	csound.txt	/*zar*
 zarg	csound.txt	/*zarg*
 zaw	csound.txt	/*zaw*
 zawm	csound.txt	/*zawm*
+zdf_1pole	csound.txt	/*zdf_1pole*
+zdf_1pole_mode	csound.txt	/*zdf_1pole_mode*
+zdf_2pole	csound.txt	/*zdf_2pole*
+zdf_2pole_mode	csound.txt	/*zdf_2pole_mode*
+zdf_ladder	csound.txt	/*zdf_ladder*
 zfilter2	csound.txt	/*zfilter2*
 zir	csound.txt	/*zir*
 ziw	csound.txt	/*ziw*
