@@ -25,7 +25,7 @@ You should be able install just as easily using other plugin managers, like Vund
 
 The plugin was designed to be patogen-compatible, and the recommended method of installation is described above.
 
-Manual installation is possible, but might ot work as well.
+Manual installation is possible, but might not work as well.
 
 Download the plugin as a `.zip` file, and extract all the directories in `$HOME/.vim/` for a local installation, or in `$VIM/vimfiles` for a system installation.
 
