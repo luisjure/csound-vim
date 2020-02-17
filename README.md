@@ -23,7 +23,7 @@ You should be able install just as easily using other plugin managers, like Vund
 
 #### manual installation
 
-The plugin was designed to be patogen-compatible, and the recommended method of installation is described above.
+The plugin was designed to be patogen-compatible, and the recommended method of installation is the one described above.
 
 Manual installation is possible, but might not work as well.
 
