@@ -1,9 +1,9 @@
 " this file is part of csound-vim
-" https://github.com/luisjure/csound
+" https://github.com/luisjure/csound-vim
 " Language:	csound	
 " Maintainer:	luis jure <lj@eumus.edu.uy>
 " License:	MIT
-" Last Change:	2017-11-09
+" Last Change:	2020-02-14
 
 " Vim syntax file
 
@@ -28,11 +28,11 @@ set foldmethod=syntax
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " load list of all opcodes from a file
-if filereadable("./mycsound_opcodes.vim")
-   runtime! syntax/mycsound_opcodes.vim
-   echom "loading custom list of opcodes mycsound_opcodes.vim"
+let mycsound_opcodes=globpath(&rtp, "syntax/mycsound_opcodes")
+if filereadable(mycsound_opcodes)
+   runtime! syntax/mycsound_opcodes
 else
-   runtime! syntax/csound_opcodes.vim
+   runtime! syntax/csound_opcodes
 endif
 
 " csound opcodes and operators
@@ -73,7 +73,7 @@ syn region	csScore		matchgroup=csdTags	start="<CsScore>" end="</CsScore>" fold t
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " header
-syn keyword	csHeader	sr kr ksmps nchnls 0dbfs
+syn keyword	csHeader	sr kr ksmps nchnls 0dbfs A4
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " local and global variables
@@ -82,13 +82,13 @@ syn	match	csVariable	"\<g[akipSfw]\w\+\>"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " program flow control
-syn keyword	csConditional	cggoto cigoto ckgoto cngoto else elseif endif goto if igoto kgoto then tigoto timout
+syn keyword	csConditional	cggoto cigoto cingoto ckgoto cngoto cnkgoto else elseif endif goto if igoto kgoto rigoto then tigoto timout
 syn keyword	csLoop	loop_ge loop_gt loop_le loop_lt until while do od
-" label
+" labels
 syn match	csLabel	"^\s*\<\S\{-}:"
-syn match	csLabel "\(\<\(goto\|igoto\|kgoto\|tigoto\|reinit\)\s\+\)\@<=\(\w\+\)"
-syn match	csLabel	"\(\<\(cggoto\|cigoto\|ckgoto\|cngoto\)\s\+.\{-},\s*\)\@<=\(\w\+\)"
-syn match	csLabel	"\(\<timout\s\+.\{-},\s*.\{-},\s*\)\@<=\(\w\+\)"
+syn match	csLabel "\(\<\(goto\|igoto\|kgoto\|rigoto\|tigoto\|reinit\)\s\+\)\@<=\(\w\+\)"
+syn match	csLabel	"\(\<\(cggoto\|cigoto\|ckgoto\|cngoto\|cingoto\|cnkgoto\)\s\+.\{-},\s*\)\@<=\(\w\+\)"
+syn match	csLabel	"\(\<\(timout\|loop_ge\|loop_gt\|loop_le\|loop_lt\)\(.*,\s*\)*\)\@<=\(\w\+\s*$\)"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " macros, includes and defines
@@ -113,7 +113,11 @@ syn region	csComment	matchgroup=csComment	start="/\*" end="\*/" fold
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " instruments and user-defined opcodes (with folding)
 syn region	csInstrRegion	matchgroup=csInstrument	start="\(^\s*\)\@<=\<instr\>" end="\(^\s*\)\@<=\<endin\>" fold transparent
-syn match	csInstrName	"\(^\s*instr\s\+\)\@<=\(\w\+,*\s*\)\+"
+
+" numbered instruments
+syn match	csInstrName	"\(^\s*instr\s\+.*,*\)\@<=\<\d\+\>"
+" named instruments
+syn match	csInstrName	"\(^\s*instr\s\+.*,*\)\@<=\<+*[_a-zA-Z]\w\+\>"
 
 syn region	csOpcodeRegion	matchgroup=csInstrument	start="\(^\s*\)\@<=\<opcode\>" end="\(^\s*\)\@<=\<endop\>" fold transparent
 syn match	csOpcodeName	"\(^\s*opcode\s\+\)\@<=\(\S\+\),"
@@ -121,10 +125,9 @@ syn match	csOpcodeName	"\(^\s*opcode\s\+\)\@<=\(\S\+\),"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " score statements
 syn match	csScoStatement	"^\s*f\s*\d\+"	contained	" function tables
-syn match	csScoStatement	"^\s*i\s*\(\.\|\d\+\)"	contained	" numbered instrument
-" syn match	csScoStatement	"^\s*i\s*\d\+"	contained	" numbered instrument
-syn match	csScoStatement	+^\s*i\s*"[_a-zA-Z]\w*"+	contained	" named instrument
-syn match	csScoStatement	"^\s*[abemnrstvx]" contained	" score events
+syn match	csScoStatement	"^\s*[iq]\s*\(\.\|\d\+\)"	contained	" numbered instrument
+syn match	csScoStatement	+^\s*[iq]\s*"[_a-zA-Z]\w*"+	contained	" named instrument
+syn match	csScoStatement	"^\s*[abemnrstvxy]" contained	" score events
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " COLOR DEFINITIONS
@@ -135,7 +138,8 @@ hi link	csOpcode	Label
 hi link	csOperator	Type
 hi link	csHeader	Statement
 hi link	csInstrument	Special
-hi link	csInstrName	Label
+hi link	csInstr	Label
+hi link	csInstrName	Type
 hi link	csOpcodeName	Label
 hi link	csVariable  	String
 hi link	csdSection  	Label
@@ -144,7 +148,6 @@ hi link	csComment	Comment
 hi link csConditional	Conditional
 hi link csLoop	Repeat
 hi link	csMacro 	Define
-" hi link	csInclude 	Define
 hi link	csMacroName	Label
 hi link	csLabel 	Define
 hi link	csString	String
@@ -158,7 +161,7 @@ hi link	csScoStatement  	Label
 
 " hi csOpcode   	term=bold	ctermfg=darkred 	guifg=red	gui=bold
 " hi csInstrument	term=bold	ctermfg=lightblue	guifg=blue	gui=bold
-" hi csComment  	term=bold	ctermfg=darkgreen	guifg=#259025	gui=bold
+" hi csComment  	term=bold	ctermfg=13	guifg=#a0a0a0
 " hi csdTags    	term=bold	ctermbg=blue     	guifg=blue	gui=bold
 "
 " You can easily change them to suit your preferences.

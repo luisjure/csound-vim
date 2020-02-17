@@ -1,13 +1,13 @@
 " this file is part of csound-vim
-" https://github.com/luisjure/csound
+" https://github.com/luisjure/csound-vim
 " Language:	csound	
 " Maintainer:	luis jure <lj@eumus.edu.uy>
 " License:	MIT
-" Last Change:	2016-08-04
+" Last Change:	2020-02-14
 
 " configure dictionary for autocompletion
 au FileType csound execute 'setlocal dict=<sfile>:p:h:h/words/csound.txt'
-au FileType csound execute 'setlocal complete=k'
+au FileType csound execute 'setlocal complete+=k'
 au FileType csound execute 'setlocal completeopt=longest,menuone'
 
 " detect OS 
