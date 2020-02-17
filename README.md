@@ -9,7 +9,8 @@ Set of tools for editing Csound files (`.orc`, `.sco`, `.csd`, `.udo`) with Vim:
 
 #### with a plugin manager (recommended)
 
-`csound-vim` is compatible with [pathogen](https://github.com/tpope/vim-pathogen). If you have it installed, you can install the plugin the usual way:
+`csound-vim` is compatible with the [pathogen](https://github.com/tpope/vim-pathogen) plugin manager.
+If pathogen is properly installed and configured, the plugin can be installed the usual way:
 
     cd $HOME/.vim/bundle
     git clone git://github.com/luisjure/csound-vim/
@@ -81,15 +82,15 @@ See [`:he ins-completion`](http://vimdoc.sourceforge.net/htmldoc/insert.html#ins
 
 In normal mode, the **`F1`** key opens in the default web browser the manual page for the opcode under the cursor.
 
-The global variable `g:csound_manual` can be defined in `.vimrc`, pointing to a local directory with the html manual, like for example:
+The global variable `g:csound_manual` can be defined in `.vimrc`, pointing to a local directory with the html manual:
 
-    let g:csound_manual = "~/csound/manual/html/"
+    let g:csound_manual = "/path_to_manual/html/"
 
-If this variable is not defined, the web version at `csound.github.io` will be opened, if there is a working Internet connection.
+If this variable is not defined, the web version at [csound.github.io](https://csound.com/docs/manual/index.html) will be opened, if there is a working Internet connection.
 
 ### online help
 
-(This feature is buggy and not maintained, it is recommended to use **`F1`** feature described above.)
+(This feature is buggy and not maintained, it is recommended to use the html manual with **`F1`**, as described above.)
 
 Online documentation for most Csound elements is available through the `:he[lp]` command, or typing **`K`** when the cursor is on the element in normal mode. See [`:he help`](http://vimdoc.sourceforge.net/htmldoc/helphelp.html) and [`:he K`](http://vimdoc.sourceforge.net/htmldoc/various.html#K) for more details. 
 
