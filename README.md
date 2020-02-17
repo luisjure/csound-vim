@@ -81,7 +81,7 @@ See [`:he ins-completion`](http://vimdoc.sourceforge.net/htmldoc/insert.html#ins
 
 In normal mode, the **`F1`** key opens in the default web browser the manual page for the opcode under the cursor.
 
-The global variable `g:csound_manual` can be defined in `.vimrc`, pointing to a local directory with the html manual.
+The global variable `g:csound_manual` can be defined in `.vimrc`, pointing to a local directory with the html manual, like for example:
 
     let g:csound_manual = "~/csound/manual/html/"
 
