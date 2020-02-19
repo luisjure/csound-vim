@@ -115,7 +115,7 @@ Patches or at least ideas of how to implement the changes are most welcome.
 
 ### Acknowledgements
 
-People who contributed with ideas, suggestions, patches, or simply encouragement include: Nicola Bernardini, Brett Cornwall, Jay Chernik, Dave Phillips, and Steven Yi.
+People who contributed with ideas, suggestions, patches, or simply encouragement include: Nicola Bernardini, Brett Cornwall, Jay Chernik, Pete Goodeve, Dave Phillips, and Steven Yi.
 
 ## License
 
