@@ -50,8 +50,6 @@ Running any of these two scripts, should generate the file `mycsound_opcodes` un
 
     bash opcodelistfromcsound-z.sh
 
-or
-
     python opcodelistfromcsound-z.py
    
 
