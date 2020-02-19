@@ -49,7 +49,9 @@ It is recommended to generate this local file from the output of `csound -z`, to
 Running any of these two scripts, should generate the file `mycsound_opcodes` under `syntax/`:
 
     bash opcodelistfromcsound-z.sh
+
 or
+
     python opcodelistfromcsound-z.py
    
 
