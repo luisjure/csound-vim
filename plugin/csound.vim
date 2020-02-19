@@ -3,7 +3,7 @@
 " Language:	csound	
 " Maintainer:	luis jure <lj@eumus.edu.uy>
 " License:	MIT
-" Last Change:	2020-02-14
+" Last Change:	2020-02-19
 
 " configure dictionary for autocompletion
 au FileType csound execute 'setlocal dict=<sfile>:p:h:h/words/csound.txt'
@@ -14,12 +14,14 @@ au FileType csound execute 'setlocal completeopt=longest,menuone'
 if !exists("g:os")
   if has("win32")
     let g:os = "Windows"
+  elseif has("haiku")
+    let g:os = "Haiku"
   elseif has("unix")
-    if system('uname')=~'Darwin'
+    if system('uname')=~?'Darwin'
       let g:os = "OSX"
-    elseif system('uname')=~'Linux'
+    elseif system('uname')=~?'Linux'
       let g:os = "Linux"
-    elseif system('uname')=~'MINGW'
+    elseif system('uname')=~?'MINGW'
       let g:os = "Mingw"
     endif
   endif
@@ -42,10 +44,12 @@ function! OpenManual()
     execute "!start cmd /c start" manual_page
   elseif g:os == "Mingw"
     execute "!start" manual_page
+  elseif g:os == "Haiku"
+    execute "!open" manual_page
   else
     echo "sorry, cannot detect your OS"
     echo "try setting the variable g:os in your .vimrc"
-    echo 'valid strings are "Linux" "OSX" "Windows" and "Mingw"'
+    echo 'valid strings are "Linux" "OSX" "Windows", "Mingw" and "Haiku"'
   endif
 endfunction
 
