@@ -26,7 +26,7 @@ You should be able install just as easily using other plugin managers, like Vund
 
 The plugin was designed to be patogen-compatible, and the recommended method of installation is the one described above.
 
-Manual installation is possible, but might not work as well.
+Manual installation is possible, but might not work so well.
 
 Download the plugin as a `.zip` file, and extract all the directories in `$HOME/.vim/` for a local installation, or in `$VIM/vimfiles` for a system installation.
 
@@ -57,6 +57,10 @@ Running any of these two scripts, should generate the file `mycsound_opcodes` un
 
 The [folding](http://vimdoc.sourceforge.net/htmldoc/usr_28.html) function in Vim is used to fold orchestra and score sections, instruments and user defined opcodes, multi-line comments, etc.
 
+By default, the folding method is set to `syntax` by the plugin. It has been reported that, on some systems, folding might impact the performance negatively for large files with many folds. If that is the case, syntax folding can be disabled by including this line in `.vimrc`:
+
+    au BufRead *.orc,*.sco,*.csd,*.udo   setlocal foldmethod=manual
+
 ### macros
 
 Function keys can be mapped to macros to perform operations like saving the `.csd` file, compile it and listen to the results, without leaving the editor.
@@ -72,11 +76,12 @@ The following default macros are defined in the file **`macros/csound_macros`**:
 These macros were designed for GNU/Linux, they might need adjustments for other environments.
 
 ##### user-defined macros
+
 User-defined macros can be put in the file **`macros/mycsound_macros`**. If this file exists, it will be loaded instead of the default file.
 
 ### template
 
-When creating a new file with the `.csd` extension, the `templates/template.csd` file will be used as a template.
+When creating a new file with the `.csd` extension, the file `templates/template.csd` will be used as a template.
 
 ### autocompletion
 
