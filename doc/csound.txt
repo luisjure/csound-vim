@@ -3759,8 +3759,7 @@ imax (optional, defaults to 0) -- maximum value, for control channels
 with non-zero itype only. Must be greater than imin. In the case of
 exponential scale, it should also match the sign of imin.
 
-===========================================================================
-Notes                                                                 *Notes*
+Notes
 
 The channel parameters (imode, itype, idflt, imin, and imax) are only
 hints for the host application or external software accessing the bus
@@ -4857,8 +4856,7 @@ the number of a table of frequency multipliers.
 
  1. The following are essentially the same
 
-===========================================================================
-ia  =  cpspch(8.02)                                                      *ia*
+    ia  =  cpspch(8.02)
     ib     cps2pch  8.02, 12
     ic     cpsxpch  8.02, 12, 2, 1.02197503906
 
@@ -5352,8 +5350,7 @@ ibase -- The frequency which corresponds to pitch 0.0
 
  1. The following are essentially the same
 
-===========================================================================
-ia  =  cpspch(8.02)                                                      *ia*
+    ia  =  cpspch(8.02)
     ib     cps2pch  8.02, 12
     ic     cpsxpch  8.02, 12, 2, 1.02197503906
 
@@ -22290,8 +22287,7 @@ imin, imax -- set minimum and maximum limits on values obtained.
 
 Get the current value (0-127) of a specified MIDI controller.
 
-===========================================================================
-Warning                                                             *Warning*
+Warning
 
 midictrl should only be used in notes that were triggered from MIDI, so
 that an associated channel number is available. For notes activated from
@@ -24375,8 +24371,7 @@ ares nlfilt ain, ka, kb, kd, kC, kL
       C = 0.4, 0.5, 0.6
       L = 20
 
-===========================================================================
-This affects the lower register most but there are audible effects     *This*
+This affects the lower register most but there are audible effects
     over the whole range. We suggest that it may be useful for coloring
     drums, and for adding arbitrary highlights to notes.
 
@@ -24388,8 +24383,7 @@ This affects the lower register most but there are audible effects     *This*
       C = 0.11
       L = 20, ... 200
 
-===========================================================================
-There are instability problems with this variant but the effect is     *There*
+There are instability problems with this variant but the effect is 
     more pronounced of the lower register, but is otherwise much like
     the pure comb. Short values of L can add attack to a sound.
 
@@ -24409,8 +24403,7 @@ There are instability problems with this variant but the effect is     *There*
       C = 0.12, ... 0.24
       L = 500, 10
 
-===========================================================================
-The high pass version is less likely to oscillate. It adds              *The*
+The high pass version is less likely to oscillate. It adds
     scintillation to medium-high registers. With a large delay L it is a
     little like a reverberation, while with small values there appear to
     be formant-like regions. There are arbitrary color changes and
@@ -24446,7 +24439,7 @@ ares nlfilt2 ain, ka, kb, kd, kC, kL
       L = 20
 
 ===========================================================================
-This affects the lower register most but there are audible effects     *This*
+This affects the lower register most but there are audible effects
     over the whole range. We suggest that it may be useful for coloring
     drums, and for adding arbitrary highlights to notes.
 
@@ -24458,8 +24451,7 @@ This affects the lower register most but there are audible effects     *This*
       C = 0.11
       L = 20, ... 200
 
-===========================================================================
-There are instability problems with this variant but the effect is     *There*
+There are instability problems with this variant but the effect is
     more pronounced of the lower register, but is otherwise much like
     the pure comb. Short values of L can add attack to a sound.
 
@@ -24479,8 +24471,7 @@ There are instability problems with this variant but the effect is     *There*
       C = 0.12, ... 0.24
       L = 500, 10
 
-===========================================================================
-The high pass version is less likely to oscillate. It adds              *The*
+The high pass version is less likely to oscillate. It adds 
     scintillation to medium-high registers. With a large delay L it is a
     little like a reverberation, while with small values there appear to
     be formant-like regions. There are arbitrary color changes and
@@ -28217,8 +28208,7 @@ waveshaping/distortion.
 
 A typical example of the use of pdhalf is
 
-===========================================================================
-aphase    phasor    ifreq                                            *aphase*
+    aphase    phasor    ifreq
     apd       pdhalf    aphase, kamount
     aout      tablei    apd, 1, 1
 
@@ -28300,8 +28290,7 @@ waveshaping/distortion.
 
 A typical example of the use of pdhalfy is
 
-===========================================================================
-aphase    phasor     ifreq                                           *aphase*
+    aphase    phasor     ifreq
     apd       pdhalfy    aphase, kamount
     aout      tablei     apd, 1, 1
 
@@ -29754,8 +29743,7 @@ and subsequently when every itime period has elapsed. The time cycles
 start from the time the opcode is initialized - typically the
 initialization of the instrument.
 
-===========================================================================
-Print Output Formatting                                               *Print*
+Print Output Formatting
 
 All standard C language printf() control characters may be used. For
 example, if kval1 = 153.26789 then some common formatting options are:
@@ -29811,8 +29799,7 @@ printks2 "string", kval
 kval -- signal to be printed. The style of printing is specified in
 “string” with the standard C value specifier (%f, %d, etc.).
 
-===========================================================================
-Print Output Formatting                                               *Print*
+Print Output Formatting
 
 All standard C language printf() control characters may be used. For
 example, if kval1 = 153.26789 then some common formatting options are:
@@ -32942,11 +32929,7 @@ and exactly one of the following values to select filter type:
     a -6 dB / octave response from about kfco * kQ to kfco. Above kfco,
     there is always a -12 dB / octave cutoff.
 
-===========================================================================
-[Note] NOTE                                              *[Note]        NOTE*
-
-===========================================================================
-The rbjeq lowpass filter is basically the same as ar pareq asig,        *The*
+The rbjeq lowpass filter is basically the same as ar pareq asig,
     kfco, 0, kQ, 2 but is faster to calculate.
 
   * 2: resonant highpass filter. The parameters are the same as for the
@@ -33888,8 +33871,7 @@ xcf -- cutoff or resonant frequency of the filter, measured in Hz
 xbw -- bandwidth of the filter (the Hz difference between the upper and
 lower half-power points)
 
-===========================================================================
-Technical History                                                 *Technical*
+Technical History
 
 resonr and resonz were originally described in an article by Julius O.
 Smith and James B. Angell.^1 Smith and Angell recommended the resonz
@@ -38520,8 +38502,7 @@ aleft   =  aW + 0.7071*aY                                             *aleft*
 
   * 2: B format with W, X, and Y output (2D). This can be converted to UHJ:
 
-===========================================================================
-aWre, aWim      hilbert aW                                             *aWre*
+aWre, aWim      hilbert aW
     aXre, aXim      hilbert aX
     aYre, aYim      hilbert aY
     aWXr    =  0.0928*aXre + 0.4699*aWre
@@ -38533,8 +38514,7 @@ aWre, aWim      hilbert aW                                             *aWre*
 
   * 4: Simulates a pair of microphones (stereo output)
 
-===========================================================================
-aW      butterlp aW, ifreq      ; recommended values for ifreq           *aW*
+aW      butterlp aW, ifreq      ; recommended values for ifreq
     aY      butterlp aY, ifreq      ; are around 1000 Hz
     aleft   =  aW + aX
     aright  =  aY + aZ
@@ -38596,17 +38576,13 @@ avoided by:
 
   * mixing low level DC or noise to the input signal, e.g.
 
-===========================================================================
-atmp rnd31 1/1e24, 0, 0                                                *atmp*
+atmp rnd31 1/1e24, 0, 0
 
-===========================================================================
-aW, aX, aY, aZ spa3di ain + atmp, ...                                    *aW*
+aW, aX, aY, aZ spa3di ain + atmp, ...
 
-===========================================================================
-or                                                                       *or*
+or
 
-===========================================================================
-aW, aX, aY, aZ spa3di ain + 1/1e24, ...                                  *aW*
+aW, aX, aY, aZ spa3di ain + 1/1e24, ...
 
   * reducing irlen in the case of spat3dt (which does not have an input
     signal). A value of about 0.005 is suitable for most uses, although
@@ -38695,19 +38671,16 @@ imode -- Output mode
 
   * 0: B format with W output only (mono)
 
-===========================================================================
-aout    =  aW                                                          *aout*
+aout    =  aW
 
   * 1: B format with W and Y output (stereo)
 
-===========================================================================
-aleft   =  aW + 0.7071*aY                                             *aleft*
-    aright  =  aW - 0.7071*aY
+aleft   =  aW + 0.7071*aY
+aright  =  aW - 0.7071*aY
 
   * 2: B format with W, X, and Y output (2D). This can be converted to UHJ:
 
-===========================================================================
-aWre, aWim      hilbert aW                                             *aWre*
+aWre, aWim      hilbert aW
     aXre, aXim      hilbert aX
     aYre, aYim      hilbert aY
     aWXr    =  0.0928*aXre + 0.4699*aWre
@@ -38719,11 +38692,10 @@ aWre, aWim      hilbert aW                                             *aWre*
 
   * 4: Simulates a pair of microphones (stereo output)
 
-===========================================================================
-aW      butterlp aW, ifreq      ; recommended values for ifreq           *aW*
-    aY      butterlp aY, ifreq      ; are around 1000 Hz
-    aleft   =  aW + aX
-    aright  =  aY + aZ
+aW      butterlp aW, ifreq      ; recommended values for ifreq
+aY      butterlp aY, ifreq      ; are around 1000 Hz
+aleft   =  aW + aX
+aright  =  aY + aZ
 
 Mode 0 is the cheapest to calculate, while mode 4 is the most expensive.
 
@@ -38767,17 +38739,13 @@ avoided by:
 
   * mixing low level DC or noise to the input signal, e.g.
 
-===========================================================================
-atmp rnd31 1/1e24, 0, 0                                                *atmp*
+atmp rnd31 1/1e24, 0, 0
 
-===========================================================================
-aW, aX, aY, aZ spat3di ain + atmp, ...                                   *aW*
+aW, aX, aY, aZ spat3di ain + atmp, ...
 
-===========================================================================
-or                                                                       *or*
+or
 
-===========================================================================
-aW, aX, aY, aZ spa3di ain + 1/1e24, ...                                  *aW*
+aW, aX, aY, aZ spa3di ain + 1/1e24, ...
 
   * reducing irlen in the case of spat3dt (which does not have an input
     signal). A value of about 0.005 is suitable for most uses, although
@@ -38871,35 +38839,31 @@ imode -- Output mode
 
   * 0: B format with W output only (mono)
 
-===========================================================================
-aout    =  aW                                                          *aout*
+aout    =  aW
 
   * 1: B format with W and Y output (stereo)
 
-===========================================================================
-aleft   =  aW + 0.7071*aY                                             *aleft*
-    aright  =  aW - 0.7071*aY
+aleft   =  aW + 0.7071*aY
+aright  =  aW - 0.7071*aY
 
   * 2: B format with W, X, and Y output (2D). This can be converted to UHJ:
 
-===========================================================================
-aWre, aWim      hilbert aW                                             *aWre*
-    aXre, aXim      hilbert aX
-    aYre, aYim      hilbert aY
-    aWXr    =  0.0928*aXre + 0.4699*aWre
-    aWXiYr  =  0.2550*aXim - 0.1710*aWim + 0.3277*aYre
-    aleft   =  aWXr + aWXiYr
-    aright  =  aWXr - aWXiYr
+aWre, aWim      hilbert aW
+aXre, aXim      hilbert aX
+aYre, aYim      hilbert aY
+aWXr    =  0.0928*aXre + 0.4699*aWre
+aWXiYr  =  0.2550*aXim - 0.1710*aWim + 0.3277*aYre
+aleft   =  aWXr + aWXiYr
+aright  =  aWXr - aWXiYr
 
   * 3: B format with all outputs (3D)
 
   * 4: Simulates a pair of microphones (stereo output)
 
-===========================================================================
-aW      butterlp aW, ifreq      ; recommended values for ifreq           *aW*
-    aY      butterlp aY, ifreq      ; are around 1000 Hz
-    aleft   =  aW + aX
-    aright  =  aY + aZ
+aW      butterlp aW, ifreq      ; recommended values for ifreq
+aY      butterlp aY, ifreq      ; are around 1000 Hz
+aleft   =  aW + aX
+aright  =  aY + aZ
 
 Mode 0 is the cheapest to calculate, while mode 4 is the most expensive.
 
@@ -45459,8 +45423,7 @@ i-rate to k-rate. This will change the opcode's behavior in the unusual
 cases where the i-rate variable ielements is changed inside the
 instrument, for example in:
 
-===========================================================================
-instr 1                                                               *instr*
+instr 1
 ielements  =        10
            vadd     1, 1, ielements
 ielements  =        20
@@ -45576,8 +45539,7 @@ i-rate to k-rate. This will change the opcode's behavior in the unusual
 cases where the i-rate variable ielements is changed inside the
 instrument, for example in:
 
-===========================================================================
-instr 1                                                               *instr*
+instr 1
 ielements  =        10
            vadd     1, 1, ielements
 ielements  =        20
@@ -46932,8 +46894,7 @@ i-rate to k-rate. This will change the opcode's behavior in the unusual
 cases where the i-rate variable ielements is changed inside the
 instrument, for example in:
 
-===========================================================================
-instr 1                                                               *instr*
+instr 1
 ielements  =        10
            vadd     1, 1, ielements
 ielements  =        20
@@ -47106,12 +47067,9 @@ and slower speed.
   * In vdelayxw*, changing the delay time has some effects on output
     volume:
 
-===========================================================================
-a = 1 / (1 + dt)                                                          *a*
+a = 1 / (1 + dt)
 
-===========================================================================
-where a is the output gain, and dt is the change of delay time per     *where*
-    seconds.
+where a is the output gain, and dt is the change of delay time per seconds.
 
   * These opcodes are best used in the double-precision version of Csound.
 
@@ -47167,12 +47125,9 @@ separate opcodes for each channel.
   * In vdelayxw*, changing the delay time has some effects on output
     volume:
 
-===========================================================================
-a = 1 / (1 + dt)                                                          *a*
+a = 1 / (1 + dt)
 
-===========================================================================
-where a is the output gain, and dt is the change of delay time per     *where*
-    seconds.
+where a is the output gain, and dt is the change of delay time per seconds.
 
   * These opcodes are best used in the double-precision version of Csound.
 
@@ -47228,12 +47183,9 @@ separate opcodes for each channel.
   * In vdelayxw*, changing the delay time has some effects on output
     volume:
 
-===========================================================================
-a = 1 / (1 + dt)                                                          *a*
+a = 1 / (1 + dt)
 
-===========================================================================
-where a is the output gain, and dt is the change of delay time per     *where*
-    seconds.
+where a is the output gain, and dt is the change of delay time per seconds.
 
   * These opcodes are best used in the double-precision version of Csound.
 
@@ -47290,11 +47242,9 @@ listener is fixed, and the sound source is moving.
   * In vdelayxw*, changing the delay time has some effects on output
     volume:
 
-===========================================================================
-a = 1 / (1 + dt)                                                          *a*
+a = 1 / (1 + dt)
 
-===========================================================================
-where a is the output gain, and dt is the change of delay time per     *where*
+where a is the output gain, and dt is the change of delay time per 
     seconds.
 
   * These opcodes are best used in the double-precision version of Csound.
@@ -47357,12 +47307,9 @@ separate opcodes for each channel.
   * In vdelayxw*, changing the delay time has some effects on output
     volume:
 
-===========================================================================
-a = 1 / (1 + dt)                                                          *a*
+a = 1 / (1 + dt)
 
-===========================================================================
-where a is the output gain, and dt is the change of delay time per     *where*
-    seconds.
+where a is the output gain, and dt is the change of delay time per seconds.
 
   * These opcodes are best used in the double-precision version of Csound.
 
@@ -47423,12 +47370,9 @@ separate opcodes for each channel.
   * In vdelayxw*, changing the delay time has some effects on output
     volume:
 
-===========================================================================
-a = 1 / (1 + dt)                                                          *a*
+a = 1 / (1 + dt)
 
-===========================================================================
-where a is the output gain, and dt is the change of delay time per     *where*
-    seconds.
+where a is the output gain, and dt is the change of delay time per seconds.
 
   * These opcodes are best used in the double-precision version of Csound.
 
@@ -47532,8 +47476,7 @@ i-rate to k-rate. This will change the opcode's behavior in the unusual
 cases where the i-rate variable ielements is changed inside the
 instrument, for example in:
 
-===========================================================================
-instr 1                                                               *instr*
+instr 1
 ielements  =        10
            vadd     1, 1, ielements
 ielements  =        20
@@ -47725,8 +47668,7 @@ i-rate to k-rate. This will change the opcode's behavior in the unusual
 cases where the i-rate variable ielements is changed inside the
 instrument, for example in:
 
-===========================================================================
-instr 1                                                               *instr*
+instr 1
 ielements  =        10
            vadd     1, 1, ielements
 ielements  =        20
@@ -47885,8 +47827,7 @@ i-rate to k-rate. This will change the opcode's behavior in the unusual
 cases where the i-rate variable ielements is changed inside the
 instrument, for example in:
 
-===========================================================================
-instr 1                                                               *instr*
+instr 1
 ielements  =        10
            vadd     1, 1, ielements
 ielements  =        20
@@ -48364,8 +48305,7 @@ i-rate to k-rate. This will change the opcode's behavior in the unusual
 cases where the i-rate variable ielements is changed inside the
 instrument, for example in:
 
-===========================================================================
-instr 1                                                               *instr*
+instr 1
 ielements  =        10
            vadd     1, 1, ielements
 ielements  =        20
@@ -48485,8 +48425,7 @@ i-rate to k-rate. This will change the opcode's behavior in the unusual
 cases where the i-rate variable ielements is changed inside the
 instrument, for example in:
 
-===========================================================================
-instr 1                                                               *instr*
+instr 1
 ielements  =        10
            vadd     1, 1, ielements
 ielements  =        20
@@ -48686,27 +48625,16 @@ orchestra:
 
 instr 101
 
-===========================================================================
-index tableng p4                                                      *index*
+index tableng p4
 
-===========================================================================
-index = index - 1  ; start from last point                            *index*
+index = index - 1  ; start from last point
 loop:
 
-===========================================================================
-ival table index, p4                                                   *ival*
-
-===========================================================================
-ival = ival * ival                                                     *ival*
-
-===========================================================================
-tableiw ival, index, p4                                             *tableiw*
-
-===========================================================================
-index = index - 1                                                     *index*
-
-===========================================================================
-if index < 0 igoto endloop                                               *if*
+ival table index, p4
+ival = ival * ival
+tableiw ival, index, p4
+index = index - 1
+if index < 0 igoto endloop
             igoto loop
 endloop:
 endin
@@ -48919,8 +48847,7 @@ i-rate to k-rate. This will change the opcode's behavior in the unusual
 cases where the i-rate variable ielements is changed inside the
 instrument, for example in:
 
-===========================================================================
-instr 1                                                               *instr*
+instr 1
 ielements  =        10
            vadd     1, 1, ielements
 ielements  =        20
@@ -49038,8 +48965,7 @@ i-rate to k-rate. This will change the opcode's behavior in the unusual
 cases where the i-rate variable ielements is changed inside the
 instrument, for example in:
 
-===========================================================================
-instr 1                                                               *instr*
+instr 1
 ielements  =        10
            vadd     1, 1, ielements
 ielements  =        20
@@ -49571,8 +49497,7 @@ i-rate to k-rate. This will change the opcode's behavior in the unusual
 cases where the i-rate variable ielements is changed inside the
 instrument, for example in:
 
-===========================================================================
-instr 1                                                               *instr*
+instr 1
 ielements  =        10
            vadd     1, 1, ielements
 ielements  =        20
@@ -51318,8 +51243,7 @@ effectively the scaling factor of the wavetable.
 
 kfreq -- frequency of the scan rate
 
-===========================================================================
-Matrix Format                                                        *Matrix*
+Matrix Format
 
 The new matrix format is a list of connections, one per line linking
 point x to point y. There is no weight given to the link; it is assumed
@@ -51424,8 +51348,7 @@ kstrngth -- power that the active hammer uses
 ain -- audio input that adds to the velocity of the masses. Amplitude
 should not be too great.
 
-===========================================================================
-Matrix Format                                                        *Matrix*
+Matrix Format
 
 The new matrix format is a list of connections, one per line linking
 point x to point y. There is no weight given to the link; it is assumed
@@ -51977,7 +51900,7 @@ to be used for mixing, then use zkcl or zacl to clear those ranges.
 
 
 ===========================================================================
-a Statement (or Advance Statement)                                        *a*
+a Statement (or Advance Statement)                                 *a (sco)*
 
   Description
 
@@ -52197,7 +52120,7 @@ power-of-2 plus 1.
 
 
 ===========================================================================
-i Statement (Instrument or Note Statement)                                *i*
+i Statement (Instrument or Note Statement)                         *i (sco)*
 
   Description
 
@@ -53135,8 +53058,7 @@ in degrees (0-360).
     different frequencies. The two major restrictions on GEN10 that the
     partials be harmonic and in phase do not apply to GEN09 or GEN19.
 
-===========================================================================
-In each case the composite wave, once drawn, is then rescaled to         *In*
+In each case the composite wave, once drawn, is then rescaled to
     unity if p4 was positive. A negative p4 will cause rescaling to be
     skipped.
 
@@ -53169,8 +53091,7 @@ should be given a strength of zero.
     different frequencies. The two major restrictions on GEN10 that the
     partials be harmonic and in phase do not apply to GEN09 or GEN19.
 
-===========================================================================
-In each case the composite wave, once drawn, is then rescaled to         *In*
+In each case the composite wave, once drawn, is then rescaled to
     unity if p4 was positive. A negative p4 will cause rescaling to be
     skipped.
 
@@ -53626,8 +53547,7 @@ sinusoid from range [-2,2] to range [0,4] (before later rescaling).
     different frequencies. The two major restrictions on GEN10 that the
     partials be harmonic and in phase do not apply to GEN09 or GEN19.
 
-===========================================================================
-In each case the composite wave, once drawn, is then rescaled to         *In*
+In each case the composite wave, once drawn, is then rescaled to
     unity if p4 was positive. A negative p4 will cause rescaling to be
     skipped.
 
