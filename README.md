@@ -2,7 +2,13 @@
 
 ## Csound tools for Vim
 
-Set of tools for editing Csound files (`.orc`, `.sco`, `.csd`, `.udo`) with Vim: syntax recognition and highlighting, folding, macros, autocompletion, on-line reference, and templates.
+**`csound-vim`** is a plugin that turns the powerful text editor [Vim](https://www.vim.org/) into a simple but productive
+Csound development environment.
+
+It provides several functionalities for editing Csound files (`.orc`, `.sco`, `.csd`, `.udo`), like syntax recognition and
+highlighting, folding, autocompletion, on-line reference and templates, as well as macros for compiling the .csd file and listening to the results, without leaving the editor.
+
+**`csound-vim`** can be combined with Steven Yi's [csound-repl](https://github.com/kunstmusik/csound-repl) for live coding.
 
 
 ## Installation
@@ -59,7 +65,11 @@ The [folding](http://vimdoc.sourceforge.net/htmldoc/usr_28.html) function in Vim
 
 By default, the folding method is set to `syntax` by the plugin. It has been reported that, on some systems, folding might impact the performance negatively for large files with many folds. If that is the case, syntax folding can be disabled by including this line in `.vimrc`:
 
-    au BufRead *.orc,*.sco,*.csd,*.udo   setlocal foldmethod=manual
+    autocmd Syntax csound setlocal foldmethod=manual
+
+To keep syntax folding, but having the folds open by default when creating or opening a file, this line should be included instead:
+
+    autocmd Syntax csound normal zR
 
 ### macros
 
