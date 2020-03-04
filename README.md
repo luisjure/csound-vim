@@ -26,7 +26,7 @@ To update, simply run `git pull` in the `bundle/csound-vim` directory:
     cd $HOME/.vim/bundle/csound-vim
     git pull
 
-You should be able install just as easily using other plugin managers, like Vundle, NeoBundle, or VimPlug.
+Installation should be just as easy using other compatible plugin managers, like [Vundle](https://github.com/VundleVim/Vundle.vim), [NeoBundle](https://github.com/Shougo/neobundle.vim), or [vim-plug](https://github.com/junegunn/vim-plug).
 
 #### manual installation
 
