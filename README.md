@@ -13,30 +13,43 @@ highlighting, folding, autocompletion, on-line reference and templates, as well 
 
 ## Installation
 
-#### with a plugin manager (recommended)
+`csound-vim` follows the standard Vim plugin structure, and can be installed like any other plugin.
 
-`csound-vim` is compatible with the [pathogen](https://github.com/tpope/vim-pathogen) plugin manager.
-If pathogen is properly installed and configured, the plugin can be installed the usual way:
+### where to install it
 
-    cd $HOME/.vim/bundle
+`csound-vim` should be installed in your usual plugin directory.
+
+When using **Vim's native package management** (added in Vim 8), the path of Vim's local plugin directory is of the form:
+
+    $HOME/.vim/pack/foo/start/
+
+where `foo` is you whatever arbitrary name you chose. 
+
+If you are using a **plugin manager** like [pathogen](https://github.com/tpope/vim-pathogen), your plugins should be located under:
+ 
+    $HOME/.vim/bundle/
+
+This should also work with other compatible plugin managers, like [Vundle](https://github.com/VundleVim/Vundle.vim), [NeoBundle](https://github.com/Shougo/neobundle.vim), or [vim-plug](https://github.com/junegunn/vim-plug).
+
+### how to install it
+
+In your Vim plugin directory you can either download and unpack the latest [release](https://github.com/luisjure/csound-vim/releases), or clone the `git` repository:
+
     git clone git://github.com/luisjure/csound-vim/
 
-To update, simply run `git pull` in the `bundle/csound-vim` directory:
+In this case, you can update the plugin simply running `git pull` in the `csound-vim` plugin directory.
 
-    cd $HOME/.vim/bundle/csound-vim
-    git pull
+### system-wide installation
 
-Installation should be just as easy using other compatible plugin managers, like [Vundle](https://github.com/VundleVim/Vundle.vim), [NeoBundle](https://github.com/Shougo/neobundle.vim), or [vim-plug](https://github.com/junegunn/vim-plug).
+Although it is generally recommended to install Vim plugins locally under users' homes, the plugin can also be installed system-wide following the methods described above, substituting `$HOME/.vim/` with `$VIM/vimfiles/`.
 
-#### manual installation
+### Installation with a package manager
 
-The plugin was designed to be patogen-compatible, and the recommended method of installation is the one described above.
+`vim-csound` has been packaged for some Linux distributions, and can be installed using the respective package managers:
 
-Manual installation is possible, but might not work so well.
+- [Arch Linux](https://archlinux.org/packages/community/any/vim-csound/): `pacman -S vim-csound`
+- [Gentoo](https://packages.gentoo.org/packages/app-vim/csound-syntax): `emerge app-vim/csound-syntax`
 
-Download the plugin as a `.zip` file, and extract all the directories in `$HOME/.vim/` for a local installation, or in `$VIM/vimfiles` for a system installation.
-
-After installation, run in Vim `:helptags` on the directory with the documentation to generate the local tags for Vim's online help system. In a system installation, the command must be run as `root`.
 
 ## Features
 
@@ -46,7 +59,7 @@ The plugin provides highlighting of all (or most) Csound syntactic elements.
 
 The list of opcodes for highlighting is loaded from an external file. By default, the file **`syntax/opcodes`** will be used, containing a list of `opcodes` updated to Csound 6.14.
 
-##### user-defined `opcodes` list
+#### user-defined `opcodes` list
 
 If the file **`syntax/mycsound_opcodes`** exists, it will be loaded instead of the default file.
 
@@ -85,7 +98,7 @@ The following default macros are defined in the file **`macros/csound_macros`**:
 
 These macros were designed for GNU/Linux, they might need adjustments for other environments.
 
-##### user-defined macros
+#### user-defined macros
 
 User-defined macros can be put in the file **`macros/mycsound_macros`**. If this file exists, it will be loaded instead of the default file.
 
