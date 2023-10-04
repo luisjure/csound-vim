@@ -3,18 +3,42 @@
 " Language:	csound	
 " Maintainer:	luis jure <lj@eumus.edu.uy>
 " License:	MIT
-" Last Change:	2019-05-24 10:12:01
+" Last Change:	2023-10-04 09:12:01
 
 " function-key maps
 
-" saves present file, compiles with flags in options, returns to vim
-:noremap <F8> :up <CR> :!csound "%:p" <CR>
-" saves present file, compiles and sends to audio output, returns to vim
-:noremap <F9> :up <CR> :!csound -d -o devaudio "%:p" <CR> <CR>
-" saves present file, compiles and writes output to file, returns to vim
-:noremap <F10> :up <CR> :!csound -W -d -o "%:p:r.wav" "%:p" <CR> <CR>
-" saves present file, compiles and writes output to file, stays in console (for debugging) 
-:noremap <F11> :up <CR> :!csound -W -d -o "%:p:r.wav" "%:p" <CR>
-" plays last compiled file
-:noremap <F12> :!aplay "%:p:r.wav" <CR><CR>
+if has('nvim')
+    " saves present file, compiles with flags in options, returns to vim
+    :noremap <F8> :up <CR> :vsplit <CR> :terminal csound "%:p" <CR>
+    " saves present file, compiles and sends to audio output, returns to vim
+    :noremap <F9> :up <CR> :vsplit <CR> :terminal csound -d -o devaudio "%:p" <CR> <CR>
+    " saves present file, compiles and writes output to file, returns to vim
+    :noremap <F10> :up <CR> :vsplit <CR> :terminal csound -W -d -o "%:p:r.wav" "%:p" <CR> <CR>
+    " saves present file, compiles and writes output to file, stays in console (for debugging) 
+    :noremap <F11> :up <CR> :vsplit <CR> :terminal csound -W -d -o "%:p:r.wav" "%:p" <CR>
+    " plays last compiled file
+    :noremap <F12> :vsplit <CR> :terminal aplay "%:p:r.wav" <CR><CR>
+elseif has('gui_running')
+    " saves present file, compiles with flags in options, returns to vim
+    :noremap <F8> :up <CR> :terminal csound "%:p" <CR>
+    " saves present file, compiles and sends to audio output, returns to vim
+    :noremap <F9> :up <CR> :terminal csound -d -o devaudio "%:p" <CR> <CR>
+    " saves present file, compiles and writes output to file, returns to vim
+    :noremap <F10> :up <CR> :terminal csound -W -d -o "%:p:r.wav" "%:p" <CR> <CR>
+    " saves present file, compiles and writes output to file, stays in console (for debugging) 
+    :noremap <F11> :up <CR> :terminal csound -W -d -o "%:p:r.wav" "%:p" <CR>
+    " plays last compiled file
+    :noremap <F12> :terminal aplay "%:p:r.wav" <CR><CR>
+else 
+    " saves present file, compiles with flags in options, returns to vim
+    :noremap <F8> :up <CR> :!csound "%:p" <CR>
+    " saves present file, compiles and sends to audio output, returns to vim
+    :noremap <F9> :up <CR> :!csound -d -o devaudio "%:p" <CR> <CR>
+    " saves present file, compiles and writes output to file, returns to vim
+    :noremap <F10> :up <CR> :!csound -W -d -o "%:p:r.wav" "%:p" <CR> <CR>
+    " saves present file, compiles and writes output to file, stays in console (for debugging) 
+    :noremap <F11> :up <CR> :!csound -W -d -o "%:p:r.wav" "%:p" <CR>
+    " plays last compiled file
+    :noremap <F12> :!aplay "%:p:r.wav" <CR><CR>
+endif
 
