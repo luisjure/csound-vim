@@ -136,6 +136,13 @@ In normal mode, the **`F2`** key opens in a new tab the example `csd` for the op
 
 This only works if the global variable `g:csound_manual` is defined and points to a local copy of the html manual.
 
+### disable manual key bindings
+
+If you want to disable the **`F1`** and **`F2`** key bindings you can do so by setting the
+`g:csound_enable_manual_keys` variable to `0` in your Vim configuration file.
+
+	let g:csound_enable_manual_keys = 0
+
 ## Contributing
 
 You can contribute to the development of this plugin by reporting bugs or missing elements, and by suggesting improvements and new functionalities. 
