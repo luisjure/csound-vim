@@ -3,7 +3,7 @@
 " Language:	csound	
 " Maintainer:	luis jure <lj@eumus.edu.uy>
 " License:	MIT
-" Last Change:	2020-02-19
+" Last Change:	2024-01-18
 
 " configure dictionary for autocompletion
 au FileType csound execute 'setlocal dict=<sfile>:p:h:h/words/csound.txt'
@@ -69,5 +69,11 @@ function! OpenExample()
   endif
 endfunction
 
-noremap <F1> :call OpenManual()<CR><CR>
-noremap <F2> :call OpenExample()<CR>
+" enable the manual key mappings by default
+if !exists('g:csound_enable_manual_keys')
+	let g:csound_enable_manual_keys = 1
+endif
+if g:csound_enable_manual_keys
+	noremap <F1> :call OpenManual()<CR><CR>
+	noremap <F2> :call OpenExample()<CR>
+endif
